@@ -1,0 +1,66 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left:auto;
+    margin-right:auto;
+    position:absolute;
+}
+
+.visualisationContainer {
+    display: flex;
+}
+
+.map_container {
+    width: 60%; /* Keep existing width */
+    flex-shrink: 0; /* Prevent shrinking */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text elements are centered */
+}
+
+.line_graph {
+    width: 35%; /* Takes up less space */
+    flex-shrink: 0;
+    margin-top: 7%;
+}
+
+.map_container svg {
+    width: 100%; /* Fill the container */
+}
+
+.line_graph svg {
+    width: 100%; /* Fill the container */
+    height: 400px;
+}
+
+.region {
+    fill: #d3d3d3;
+    stroke: #555;
+    stroke-width: 0.5px;
+}
+.region:hover {
+    fill: #ffcc00;
+}
+.tooltip {
+    color: #333;
+    text-align: center;
+}
+
+ul {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+.slider {
+    width: 300px;
+}

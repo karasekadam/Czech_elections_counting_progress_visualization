@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of vote counting process</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Map of vote counting process</h1>
+    <div class="visualisationContainer">
+        <div class="map_container">
+            <svg id="map"></svg>
+            <div class="slidecontainer">
+                <button id="prevWave">Previous</button>
+                <input type="range" class="slider" id="wave">
+                <button id="nextWave">Next</button>
+            </div>
+            <p>Current shown result wave: <span id="sliderShow">1</span></p>
+            <p>Publication time of result wave: <span id="waveTime"></span></p>
+            <p>Global percentage of counted votes: <span id="globalCounted"></span></p>
+        </div>
+        <div class="line_graph">
+            <svg id="graph"></svg>
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
