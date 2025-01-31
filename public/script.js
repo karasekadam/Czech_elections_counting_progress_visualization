@@ -185,6 +185,7 @@ function init() {
     function updateGlobalCounted() {
         globalCounted.textContent = (countedAtGlobal[currWave]).toFixed(2) + "%";
     }
+    updateGlobalCounted();
 
     // Update the displayed numbers whenever the slider value changes
     slider.addEventListener("input", () => {
