@@ -361,6 +361,39 @@ function initGraph() {
     .style("fill", "black")
     .text("Party %");
 
+    const waveIndicator = g.append("line")
+        .attr("class", "wave-indicator")
+        .attr("x1", 0)
+        .attr("x2", 0)
+        .attr("y1", 0)
+        .attr("y2", height)
+        .attr("stroke", "red")
+        .attr("stroke-width", 2)
+        .attr("stroke-dasharray", "5,5"); // Dashed line for better visibility
+
+    // Function to update the vertical line when `currWave` changes
+    function updateWaveIndicator() {
+        const xPosition = xScale(currWave); // Get new x position from scale
+
+        waveIndicator
+            .transition()
+            .duration(200)
+            .attr("x1", xPosition)
+            .attr("x2", xPosition)
+            .attr("y1", height)
+            .attr("y2", height * 0.21);
+    }
+
+    let lastWave = currWave;
+
+setInterval(() => {
+    if (currWave !== lastWave) { // Detect changes
+        lastWave = currWave;
+        updateWaveIndicator(); // Update line
+    }
+}, 100); // Check every 100ms
+
+    updateWaveIndicator();
 }
 
 
